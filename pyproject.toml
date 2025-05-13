@@ -1,0 +1,22 @@
+[project]
+name = "video-summary"
+version = "0.1.0"
+description = "Summarize video(s) using Google Gemini API."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+
+dependencies = [
+    "google-genai",
+    "ffmpeg-python"
+]
+
+[project.scripts]
+summarize-video = "video_summary.summarize_video:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["video_summary"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
